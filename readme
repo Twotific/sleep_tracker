@@ -1,0 +1,10 @@
+A app that tracks the level of "closedness" of your eyes and plays an alert if the value gets too low.
+the app identifyes the user with the help of Haar-Cascade in openCV by training the face detector to recognise my face.
+Then using dlib to identify landmarks assosated with the eyes. using shape_predictor_68_face_landmarks.dat for this, unfortunatley it's
+too big to upload but can be downloaded at
+https://github.com/italojs/facial-landmarks-recognition/blob/master/shape_predictor_68_face_landmarks.dat
+
+The app then calculates the EAR value or eye aspect rato by getting the realtionship between the width and height between the points.
+if this value falls below 0.3 for more than 7 frames (to avoid false positives because of blinking) it sounds an alarm. It then resets
+in order not to play the alarm continuously.
+
